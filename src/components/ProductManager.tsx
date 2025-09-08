@@ -35,7 +35,7 @@ export default function ProductManager() {
       <header className="text-center text-white rounded p-5">
         <h2>Quản lý sản phẩm</h2>
       </header>
-      <AddProduct products={products} addProduct={addProduct} />
+      <AddProduct nextId={products.length} addProduct={addProduct} />
       <Table
         products={products}
         handleDelete={handleDelete}

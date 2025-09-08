@@ -5,10 +5,10 @@ import Swal from "sweetalert2";
 import type { Product } from "./data";
 
 export default function AddProduct({
-  products,
+  nextId,
   addProduct,
 }: {
-  products: Product[];
+  nextId: number;
   addProduct: (newProduct: Product) => void;
 }) {
   const [name, setName] = useState<string>("");
@@ -33,7 +33,7 @@ export default function AddProduct({
     }
 
     const newProduct: Product = {
-      id: products.length + 1,
+      id: nextId,
       name,
       price: Number(price),
       isAvailable: isStock,
