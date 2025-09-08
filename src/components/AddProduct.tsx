@@ -24,6 +24,13 @@ export default function AddProduct({
       });
       return;
     }
+    if (price < 0) {
+      Swal.fire({
+        title: "Giá tiền không được âm!",
+        icon: "warning",
+      });
+      return;
+    }
 
     const newProduct: Product = {
       id: products.length + 1,

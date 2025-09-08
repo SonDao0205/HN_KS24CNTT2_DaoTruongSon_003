@@ -18,14 +18,14 @@ export default function Pagination({ length }: { length: number }) {
             </svg>
           </p>
           {Array.from({ length: pagesNumber }, (_, index) => {
-            const isActive = index + 1 === currentPage;
-
             return (
               <p
                 style={{ cursor: "pointer" }}
                 key={index + 1}
                 className={`py-2 px-3 rounded ${
-                  isActive ? "border border-primary text-primary" : "text-body"
+                  index + 1 === currentPage
+                    ? "border border-primary text-primary"
+                    : "text-body"
                 }`}
               >
                 {index + 1}
